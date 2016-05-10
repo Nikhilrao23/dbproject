@@ -2,11 +2,11 @@
 include_once('connection.php');
 
 echo"View Order History".PHP_EOL;
-echo"Enter the Cart id".PHP_EOL;
+echo"Enter the Shipping Detail id".PHP_EOL;
 $handle = fopen("php://stdin","r");
 $line = fgets($handle);
 $cartID = trim($line);
-$resq = mysql_query("select * from shipping_address where cartID = '$cartID'");
+$resq = mysql_query("select * from shipping_address where SHID = '$cartID'");
 //$db=mysql_fetch_object($res);
 while($dba=mysql_fetch_array($resq))
 {
